@@ -31,7 +31,6 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
 # Create a symbolic link to nvim binary
 echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.bashrc
-source ~/.bashrc
 # Set up Neovim configuration
 echo "Setting up Neovim configuration..."
 mkdir -p ~/.config/nvim
@@ -55,4 +54,5 @@ tmux source-file ~/.tmux.conf
 $TPM_DIR/bin/install_plugins
 echo "clear install files"
 rm -rf nvim-linux64.tar.gz  ripgrep_13.0.0_amd64.deb
+source ~/.bashrc
 echo "Installation and configuration complete!"
