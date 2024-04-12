@@ -1,1 +1,1 @@
-## My neovim and tmux config
+## My neovim and tmux configuration

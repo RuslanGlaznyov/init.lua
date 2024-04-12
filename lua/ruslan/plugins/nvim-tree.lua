@@ -13,19 +13,30 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 -- configure nvim-tree
 nvimtree.setup({
+  update_focused_file = {
+    enable = true,
+  },
   -- change folder arrow icons
   renderer = {
     icons = {
       glyphs = {
         folder = {
-          arrow_closed = "", -- arrow when folder is closed
-          arrow_open = "", -- arrow when folder is open
+          arrow_closed = "", -- arrow when folder is closed
+          arrow_open = "", -- arrow when folder is open
         },
       },
     },
   },
   view = {
     float = {
+      open_win_config = {
+        relative = "editor",
+        border = "rounded",
+        width = 50,
+        height = 40,
+        row = 1,
+        col = 1,
+      },
       enable = true
     }
   },
@@ -39,9 +50,9 @@ nvimtree.setup({
       },
     },
   },
-  -- 	git = {
-  -- 		ignore = false,
-  -- 	},
+   	git = {
+   		ignore = false,
+  },
 })
 
 -- open nvim-tree on setup

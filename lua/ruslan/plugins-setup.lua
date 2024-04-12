@@ -33,7 +33,16 @@ return packer.startup(function(use)
   
 --  use({"rose-pine/neovim",  as = "rose-pine"})
   
-  use { "catppuccin/nvim", as = "catppuccin" }
+  use { "catppuccin/nvim", as = "catppuccin"  }
+  require("catppuccin").setup({
+    color_overrides = {
+      mocha = {
+  				base = "#000000",
+  				mantle = "#000000",
+  				crust = "#000000",
+  			},
+    }
+  })  
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
   -- file explorer
   use("nvim-tree/nvim-tree.lua")
@@ -78,7 +87,8 @@ return packer.startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-
+  use {'github/copilot.vim', branch = 'release' }
+  use {"ThePrimeagen/vim-be-good"} -- vim game
   if packer_bootstrap then
     require("packer").sync()
   end
