@@ -13,7 +13,10 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver',
     'rust_analyzer',
-    'lua_ls'
+    'lua_ls',
+    'jsonls',
+    'hydra_lsp' 
+
   },
   handlers = {
     lsp_zero.default_setup,
