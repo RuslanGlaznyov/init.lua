@@ -34,15 +34,20 @@ return packer.startup(function(use)
 --  use({"rose-pine/neovim",  as = "rose-pine"})
   
   use { "catppuccin/nvim", as = "catppuccin"  }
-  require("catppuccin").setup({
+  local setupCatppuccin, moduleCatppuccin = pcall(require, "catppuccin")
+  if not setupCatppuccin then
+    return
+  end
+
+  moduleCatppuccin.setup({
     color_overrides = {
       mocha = {
-  				base = "#000000",
-  				mantle = "#000000",
-  				crust = "#000000",
-  			},
+        base = "#000000",
+        mantle = "#000000",
+        crust = "#000000",
+      },
     }
-  })  
+  })
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
   -- file explorer
   use("nvim-tree/nvim-tree.lua")

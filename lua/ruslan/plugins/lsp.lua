@@ -1,3 +1,22 @@
+local setupLsp, _ = pcall(require, 'lsp-zero')
+if not setupLsp then
+  return
+end
+local setupCmp, _ = pcall(require, 'cmp')
+if not setupCmp then
+  return
+end
+local setupMason, _ = pcall(require, 'mason')
+if not setupMason then
+  return
+end
+
+local setupM, _ = pcall(require, 'mason-lspconfig')
+if not setupM then
+  return
+end
+
+
 local lsp_zero = require('lsp-zero')
 
 local cmp = require('cmp')
